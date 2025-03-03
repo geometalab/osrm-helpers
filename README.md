@@ -1,4 +1,4 @@
-# Swisstopo Shadow Generator
+# Swisstopo OSRM Mapper
 ## Description
 This project generates a shadow or terrain map as a TIFF file for a selected location in Switzerland using elevation data from the swisstopo API. With a single command, users can define a region using a bounding box, fetch the necessary terrain data, and produce an accurate shadow or terrain visualization.
 
