@@ -5,7 +5,7 @@ import shutil
 import sys
 
 # Define the base directory for files
-base_dir = "the8"
+base_dir = "files"
 merged_tif = os.path.join(base_dir, sys.argv[1])
 
 # Get a list of all .tif files in the base directory

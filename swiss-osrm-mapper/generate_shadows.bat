@@ -61,8 +61,8 @@ if /i "%use_existing%"=="y" (
     wget %next_url% -O files/%jsonname%
     
     REM REM Download GeoTIFFs from JSON
-    python download_tiffs.py "%jsonname%"
-    python find_next_link.py "%jsonname%"
+    python source\download_tiffs.py "%jsonname%"
+    python source\find_next_link.py "%jsonname%"
 
     REM Set download time
     set downloadtifTime=%time%
@@ -76,7 +76,7 @@ if /i "%use_existing%"=="y" (
 REM Call Python script to download GeoTIFFs
 set mergedStartTime=%time%
 set mergename=surface_all
-python merge_tiffs.py "%mergename%.tif"
+python source\merge_tiffs.py "%mergename%.tif"
 set mergedEndTime=%time%
 call :GetDuration %mergedStartTime% %mergedEndTime%
 echo Merging tifs time: %duration% seconds
