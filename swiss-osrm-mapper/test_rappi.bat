@@ -51,42 +51,10 @@ REM set file_name=alti-switzerland
 
 
 REM Alti or shadow?
-set output_function=alti
+set output_function=shadows
 
 REM horizon?
 set with_horizon=false
-
-REM REM GRASS GIS Batch-Datei ausführen, um die Umgebung einzurichten"%ProgramFiles%\GRASS GIS 8.4\grass84"  --text -c EPSG:2056 C:\Users\kaan.kayali\Documents\grassdata\%file_name%
-REM "%ProgramFiles%\GRASS GIS 8.4\grass84"  --text -c EPSG:2056 C:\Users\kaan.kayali\Documents\grassdata\%file_name%
- 
-REM REM Check if GRASS GIS started successfully
-REM if errorlevel 1 (
-    REM echo ERROR: GRASS GIS could not be started. Please check the paths and CRS settings.
-    REM exit /b 1
-REM )
-
-REM set GRASS_VERSION=83
-REM set GISBASE=%OSGeo4W_ROOT%\apps\grass\grass%GRASS_VERSION%
-
-REM REM Initialize the GRASS environment
-REM echo calling grass environment
-REM call "%GISBASE%\etc\env.bat"
-
-REM REM Set path to include GRASS GIS binaries
-REM echo setting path
-REM set PATH=%GISBASE%\bin;%GISBASE%\scripts;%PATH%
-
-REM REM Set the path to the GRASS database location and mapset (PERMANENT mapset)
-REM set GISDBASE=C:\Users\kaan.kayali\Documents\grassdata
-REM set LOCATION=new_location
-REM set MAPSET=PERMANENT
-
-REM set GRASS_BATCH_JOB=start_grass_job.bat
-REM echo GRASS_BATCH_JOB defined as %GRASS_BATCH_JOB%
-
-REM REM Start GRASS in non-interactive mode
-REM "%OSGeo4W_ROOT%\bin\grass83" "%GISDBASE%/%LOCATION%/%MAPSET%" --exec "%GRASS_BATCH_JOB%"
-REM exit /b
 
 if /i "%output_function%"=="shadows" (
 	call generate_shadows.bat %bbox% %file_name% %with_horizon%

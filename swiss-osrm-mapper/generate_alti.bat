@@ -5,7 +5,7 @@ REM Set variables
 set bbox=%1
 set alti_name=%2
 
-set data_dir=%CD%\the8
+set data_dir=%CD%\files
 
 set output_folder=%CD%\output
 
@@ -43,9 +43,9 @@ if /i "%use_existing%"=="y" (
 	REM )
 	REM mkdir "%data_dir%"
 
-	REM REM Set starting timer
-	REM set startTime=%time%
-	REM echo generate alti...
+	REM Set starting timer
+	set startTime=%time%
+	echo generate alti...
 
 	REM set jsonname=swissalti3d-raster_data.json
 	
@@ -57,8 +57,8 @@ if /i "%use_existing%"=="y" (
     REM wget %next_url% -O files/%jsonname%
     
     REM REM REM Download GeoTIFFs from JSON
-    REM python download_tiffs.py "%jsonname%"
-    REM python find_next_link.py "%jsonname%"
+    REM python source\download_tiffs.py "%jsonname%"
+    REM python source\find_next_link.py "%jsonname%"
 
 	REM set downloadtifTime=%time%
 	REM call :GetDuration %startTime% %downloadtifTime%
@@ -70,7 +70,7 @@ if /i "%use_existing%"=="y" (
 REM Call Python script to download GeoTIFFs
 set mergedStartTime=%time%
 set mergename=alti_all
-python merge_tiffs.py "%mergename%.tif"
+python source\merge_tiffs.py "%mergename%.tif"
 set mergedEndTime=%time%
 call :GetDuration %mergedStartTime% %mergedEndTime%
 echo Merging tifs time: %duration% seconds
