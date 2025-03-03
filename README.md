@@ -36,9 +36,9 @@ Uses **gdal_merge** to process the images.
 ```wget.exe``` is a command-line tool for downloading files from the internet. In this case it needs to download and fetch geospatial data as GeoTIFF files from the swisstopo API.
 
 ## Requirements
-Python 3.x
-GRASS GIS 8.4
-GDAL
+* Python 3.x
+* GRASS GIS 8.4
+* GDAL
 
 ## How to use
 You must execute the ```test_rappi.bat``` script in the GRASS GIS Shell. You can modify the bounding box and the filename inside the ```test_rappi.bat``` file. Also set the **output_function** to either "shadow" or "alti" based on what you want to generate. Choose whether to generate shadows alone or include horizon data.
