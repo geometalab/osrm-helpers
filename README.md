@@ -4,36 +4,36 @@ This project generates a shadow or terrain map as a TIFF file for a selected loc
 
 ## How it works
 ### Batch scripts
-#### ```generate_alti.bat```:
+* ```generate_alti.bat```:
 Downloads and merges altitude (elevation) data from GeoTIFF files.
 Uses **gdal_calc** and **gdalwarp** to convert data.
 
-#### ```generate_shadows.bat```:
+* ```generate_shadows.bat```:
 Downloads and processes shadow and terrain surface data.
 Uses GRASS GIS tools like **r.sun** and **r.horizon** to compute shadows.
 
-#### ```importing_alti3D.bat``` and ```importing_surface.bat```:
+* ```importing_alti3D.bat``` and ```importing_surface.bat```:
 Those are seperate files, which import altitude data (alti) and surface data into GRASS GIS using r.import.
 
-#### ```start_program.bat```:
+* ```start_program.bat```:
 This script begins the whole process. It sets the settings of the final outcome.
 It calls ```generate_alti.bat``` or ```generate_shadows.bat``` based on the user selection.
 
 ### Python scripts
-#### ```download_tiffs.py```:
+* ```download_tiffs.py```:
 Reads a JSON file containing geospatial dataset information.
 Extracts and downloads TIFF images from URLs.
 
-#### ```find_next_link.py```:
+* ```find_next_link.py```:
 Finds the "next" download URL in the dataset API.
 Continues downloading more TIFF files if multiple pages exist.
 
-#### ```merge_tiffs.py```:
+* ```merge_tiffs.py```:
 Merges multiple TIFF images into a single file.
 Uses **gdal_merge** to process the images.
 
 ### wget.exe
-#### ```wget.exe``` is a command-line tool for downloading files from the internet. In this case it needs to download and fetch geospatial data as GeoTIFF files from the swisstopo API.
+```wget.exe``` is a command-line tool for downloading files from the internet. In this case it needs to download and fetch geospatial data as GeoTIFF files from the swisstopo API.
 
 ## Requirements
 Python 3.x
